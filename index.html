@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeeae1">
+  <meta name="description" content="A playable reflection on A Hacker's Mind by Bruce Schneier for AIPI 590: Explainable AI. My reaction to the book, with three interactive experiments.">
+  <title>Mind the Loophole — My reflection on A Hacker’s Mind</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="#"><span class="brand-mark" aria-hidden="true">↳</span> MIND THE LOOPHOLE<span class="wordmark-dot">↗</span></a>
+    <nav aria-label="Main navigation"><a href="#field-notes">The reading</a><a href="#lab">The experiments</a><a href="#reflection">The reflection ↗</a></nav>
+    <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Pause motion Ⅱ</button>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> MY REFLECTION ON A HACKER’S MIND</p>
+        <h1 id="hero-title">I like finding<br><em>loopholes.</em></h1>
+        <p class="hero-intro">That’s probably why I liked this book so much.<br class="desktop-break"> I kept recognizing the way I think.</p>
+        <a class="button button-dark" href="#lab">Try the experiments <span aria-hidden="true">↗</span></a>
+        <span class="time-note">3 experiments · about 8 minutes</span>
+      </div>
+      <div class="hero-art">
+        <div class="diagram-heading"><span>FIG. 01 / THE INTENDED PATH</span><span class="diagram-cross" aria-hidden="true">+</span></div>
+        <svg class="system-diagram" viewBox="0 0 520 440" role="img" aria-labelledby="diagram-title diagram-desc">
+          <title id="diagram-title">There is more than one way through a system</title>
+          <desc id="diagram-desc">A gray path passes through a rule box. A green loophole passes around it. Both reach the reward, but only one follows the designer’s intent.</desc>
+          <defs>
+            <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#c7c5bc"/></pattern>
+            <marker id="arrow-gray" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#96998f"/></marker>
+            <marker id="arrow-dark" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#262a23"/></marker>
+          </defs>
+          <rect width="520" height="440" fill="url(#dots)"/>
+          <path class="intended-route" d="M64 249H161M359 249H460" marker-end="url(#arrow-gray)"/>
+          <rect x="161" y="165" width="198" height="167" rx="2" fill="#e5e3d9" stroke="#989b8f"/>
+          <path d="M181 185h158v127H181zM200 204h120v90H200zM220 223h80v52H220z" fill="none" stroke="#b5b8ab"/>
+          <rect x="204" y="234" width="112" height="31" fill="#e5e3d9"/>
+          <text x="260" y="254" text-anchor="middle" class="svg-label">THE RULES</text>
+          <path class="loophole-underlay" d="M64 249V105Q64 75 94 75H396Q425 75 425 105V219Q425 249 455 249"/>
+          <path class="loophole-route" d="M64 249V105Q64 75 94 75H396Q425 75 425 105V219Q425 249 455 249" marker-end="url(#arrow-dark)"/>
+          <circle class="traveler" r="7" fill="#262a23"/>
+          <circle cx="64" cy="249" r="13" fill="#252922"/><path d="M59 249h10m-5-5v10" stroke="#eeeae1"/>
+          <circle cx="460" cy="249" r="19" fill="#c1ed59" stroke="#262a23"/><path d="m452 249 6 6 10-12" fill="none" stroke="#262a23" stroke-width="2"/>
+          <text x="64" y="286" text-anchor="middle" class="svg-label small">YOU</text>
+          <text x="460" y="290" text-anchor="middle" class="svg-label small">REWARD</text>
+          <path d="m272 47 24 18" stroke="#62684e" fill="none"/><text x="218" y="37" class="svg-note">but what if…</text>
+          <text x="260" y="379" text-anchor="middle" class="svg-label small muted">VALID MOVE ≠ INTENDED OUTCOME</text>
+        </svg>
+        <div class="diagram-caption"><span><i class="legend-line" aria-hidden="true"></i> Follow the rules</span><span><i class="legend-line green" aria-hidden="true"></i> Find the gap</span></div>
+        <span class="art-stamp">SYSTEM<br>WORKING<br><em>as written.</em></span>
+      </div>
+      <div class="hero-footer"><span>READING <strong>A Hacker’s Mind</strong> / Bruce Schneier</span><span>AIPI 590 <span class="footer-slash">/</span> EXPLAINABLE AI</span><a href="#field-notes">READ MY REFLECTION ↓</a></div>
+    </section>
+
+    <section id="field-notes" class="reading-section wrap section-space" aria-labelledby="reading-title">
+      <div class="section-heading"><p class="eyebrow">01 / READING THE BOOK</p><p class="section-kicker">What I liked and what surprised me.</p></div>
+      <div class="reading-layout">
+        <h2 id="reading-title">What surprised me<br><em>about the book.</em></h2>
+        <div class="reading-prose">
+          <p>I really liked this book. I tend to look for ways to outsmart a system, so I recognized a lot of the thinking Schneier describes. When I find a shortcut that works, I usually feel pretty good about it. It was satisfying to read a book that took that way of thinking seriously.</p>
+          <p>What surprised me was how much hacking happens in places I hadn’t thought about. Schneier describes financial and political systems where people can follow the rules and still get around what those rules were supposed to accomplish.</p>
+          <p>The finance and virus examples especially surprised me. I hadn’t connected them through the idea of hacking before. That was probably the biggest thing I got from the book: realizing how much of this had been happening around me without me noticing.</p>
+          <div class="margin-note"><span class="note-asterisk" aria-hidden="true">✳</span><p>I hadn’t realized how much hacking<br>had nothing to do with computers.</p></div>
+        </div>
+      </div>
+      <div class="three-thoughts">
+        <article><span class="thought-number">01</span><h3>Following a rule can still miss its point.</h3><p>A rule can allow something its designers never meant to encourage. That’s what the first game lets you try.</p></article>
+        <article><span class="thought-number">02</span><h3>Money makes some loopholes easier to use.</h3><p>Schneier describes how money and power help people exploit systems. That made me reconsider how much of the advantage comes from being clever.</p></article>
+        <article><span class="thought-number">03</span><h3>Someone still has to fix the problem.</h3><p>I think testing a system is useful. I’m also assuming somebody will do something about the weaknesses it exposes.</p></article>
+      </div>
+    </section>
+
+    <section id="lab" class="lab-section" aria-labelledby="lab-title">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">02 / TRYING IT IN CODE</p><p class="section-kicker">Three examples based on ideas from the book.</p></div>
+        <div class="lab-heading"><h2 id="lab-title">Try the<br><em>experiments.</em></h2><p>Each experiment has a rule you can take advantage of. Try it, then turn on the fix and compare the results. I made up the numbers to keep the examples simple.</p></div>
+        <noscript><div class="noscript">The reflection works without JavaScript. To play the experiments, enable JavaScript and open the project through its local server or GitHub Pages.</div></noscript>
+        <div class="lab-tabs" role="tablist" aria-label="Choose an experiment">
+          <button type="button" id="tab-reward" role="tab" aria-selected="true" aria-controls="panel-reward" tabindex="0"><span>01</span> The perfect score <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" id="tab-fund" role="tab" aria-selected="false" aria-controls="panel-fund" tabindex="-1"><span>02</span> The unequal loophole <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" id="tab-pressure" role="tab" aria-selected="false" aria-controls="panel-pressure" tabindex="-1"><span>03</span> The pressure test <span class="tab-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div id="panel-reward" class="lab-panel" role="tabpanel" aria-labelledby="tab-reward" tabindex="0">
+          <div class="experiment-intro"><div><p class="eyebrow">EXPERIMENT 01 / REWARD ≠ PURPOSE</p><h3>Get 100 points<br>without learning much.</h3><p>Your goal: reach <strong>100 points</strong> with 6 energy. The platform wants you to learn, but it gives points for every note you submit, including copies.</p></div><span class="experiment-badge">PLAY<br>~ 1 MIN</span></div>
+          <div class="experiment-body">
+            <div class="control-column">
+              <div class="rule-strip"><span>THE RULE</span><code id="reward-rule">score = 20 × submissions</code></div>
+              <div class="energy-label"><span>Energy remaining</span><strong id="energy-text">6 / 6</strong></div><div id="energy-cells" class="energy-cells" aria-hidden="true"></div>
+              <button class="action-button" id="read-button" type="button"><span><strong>Read & write a new note</strong><small>2 energy · +1 understanding · +20 points</small></span><span aria-hidden="true">↗</span></button>
+              <button class="action-button" id="copy-button" type="button" disabled><span><strong>Resubmit the same note</strong><small id="copy-description">1 energy · +0 understanding · +20 points</small></span><span aria-hidden="true">↗</span></button>
+              <p id="resubmit-hint" class="micro-copy">Write one original note to unlock resubmission.</p>
+              <div class="control-bottom"><button id="reward-reset" class="text-button" type="button">↺ Start over</button><label class="check-label"><input id="reward-patch" type="checkbox"> Patch the rule <span class="small-note">(starts a new run)</span></label></div>
+              <details class="hint"><summary>Stuck? Find the opening</summary><p>One original note costs 2 energy. Four copies cost 4 more. Five submissions × 20 points = 100, but you learned only one new thing.</p></details>
+            </div>
+            <div class="readout-column">
+              <div class="scoreboard"><div><span>PLATFORM SCORE</span><strong id="score-value">0<span>/100</span></strong></div><div><span>ACTUAL UNDERSTANDING</span><strong id="learning-value">0<span>/3</span></strong></div></div>
+              <div class="metric-track" aria-hidden="true"><div id="score-bar"></div></div><div class="metric-track learning-track" aria-hidden="true"><div id="learning-bar"></div></div>
+              <div class="explanation-box"><p class="eyebrow">HOW THE SCORE IS CALCULATED</p><p id="reward-explanation">0 original notes + 0 copies = 0 submissions. The scoring rule sees no difference between them.</p><p class="explanation-footnote">We can explain every point, even though the score is a poor measure of learning.</p></div>
+              <p id="reward-feedback" class="feedback" role="status">Write a note to get started.</p>
+              <ol id="reward-history" class="action-history" aria-label="Your action history"></ol>
+            </div>
+          </div>
+          <div class="experiment-takeaway"><span>WHAT I THINK ↳</span><p>I’d be tempted to copy the note because it’s the fastest way to win. That’s why I wanted both numbers on the screen: getting 100 points looks a lot less impressive when I can also see how little I learned.</p></div>
+        </div>
+        <div id="panel-fund" class="lab-panel" role="tabpanel" aria-labelledby="tab-fund" tabindex="0" hidden>
+          <div class="experiment-intro"><div><p class="eyebrow">EXPERIMENT 02 / POWER CHANGES THE GAME</p><h3>What if you can afford<br>more accounts?</h3><p>A shared fund has <strong>100 credits</strong> for five people. Each account can claim 20. You claim first. What happens when one person can afford several accounts?</p></div><span class="experiment-badge">EXPLORE<br>~ 1 MIN</span></div>
+          <div class="experiment-body">
+            <div class="control-column">
+              <fieldset class="resource-options"><legend>Your resources</legend><label><input name="resources" type="radio" value="0" checked> No setup budget <small>1 account</small></label><label><input name="resources" type="radio" value="20"> 20 private credits to spend <small>up to 5 accounts</small></label></fieldset>
+              <label class="range-label" for="accounts">Extra accounts <output id="accounts-value" for="accounts">0</output></label><input id="accounts" type="range" min="0" max="4" value="0" step="1" disabled>
+              <p class="micro-copy">Each extra account costs 5 private credits, paid outside the fund. Every account has the same owner: you.</p>
+              <label class="check-label patch-label"><input id="fund-patch" type="checkbox"> Patch: cap claims per person</label>
+              <div class="rule-strip"><span>THE RULE</span><code id="fund-rule">maximum = 20 per account</code></div>
+            </div>
+            <div class="readout-column">
+              <div class="fund-topline"><p>Where the 100 credits go</p><span>YOU CLAIM FIRST</span></div>
+              <div id="fund-tokens" class="fund-tokens" aria-hidden="true"></div>
+              <div class="fund-legend"><span><i class="token-key mine"></i> Your claim</span><span><i class="token-key others"></i> Everyone else</span><span>● = 5 credits</span></div>
+              <div class="fund-stats"><div><span>Your net gain</span><strong id="fund-net">20</strong><small id="fund-cost">20 claimed − 0 setup</small></div><div><span>Each other person</span><strong id="fund-other">20</strong><small>remaining fund ÷ 4</small></div></div>
+              <p id="fund-feedback" class="feedback" role="status">One account each. An equal 20-credit share for everyone.</p>
+              <details class="hint"><summary>What this model leaves out</summary><p>Account ownership is perfectly knowable here; real enforcement is harder and can exclude people. Claims are sequential, others split the remainder, and setup money leaves the model. These are chosen assumptions, not a financial forecast or a specific example from the book.</p></details>
+            </div>
+          </div>
+          <div class="experiment-takeaway"><span>WHAT I THINK ↳</span><p>I usually picture someone finding a loophole because they’re clever. In this game, I know the loophole either way. I just can’t afford to use it without the extra money. That changes how I feel about the result.</p></div>
+        </div>
+        <div id="panel-pressure" class="lab-panel" role="tabpanel" aria-labelledby="tab-pressure" tabindex="0" hidden>
+          <div class="experiment-intro"><div><p class="eyebrow">EXPERIMENT 03 / BREAK → NOTICE → REPAIR</p><h3>Does pressure actually<br>make it stronger?</h3><p>I think hacking can make systems stronger. Run this with <strong>repair off and on</strong> to see what that depends on.</p></div><span class="experiment-badge">TEST<br>~ 1 MIN</span></div>
+          <div class="experiment-body">
+            <div class="control-column">
+              <label class="range-label" for="pressure">Pressure per round <output id="pressure-value" for="pressure">6</output></label><input id="pressure" type="range" min="1" max="10" value="6" step="1">
+              <label class="check-label patch-label"><input id="repair" type="checkbox"> Enable feedback & repair</label>
+              <p class="micro-copy">Setting changes reset the experiment so each comparison starts from the same place.</p>
+              <div class="rule-strip stacked"><span>THE MODEL</span><code>damage = max(0, 2 × pressure − defense)</code><code>with repair: defense += pressure</code></div>
+              <div class="simulation-buttons"><button id="pressure-run" class="button button-dark" type="button">Run 10 rounds →</button><button id="pressure-step" class="button button-outline" type="button">Step once</button></div>
+              <button id="pressure-reset" class="text-button" type="button">↺ Reset test</button>
+              <p class="micro-copy">Defense is added after a hit, capped at 20. Lost integrity stays lost. This tests one repeated flaw, not every possible attack.</p>
+            </div>
+            <div class="readout-column">
+              <div class="pressure-topline"><span id="round-label">ROUND 00 / 10</span><span id="defense-label">DEFENSE 0</span></div>
+              <div class="pressure-visual"><svg viewBox="0 0 440 190" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">System integrity over ten rounds</title><desc id="chart-desc">Integrity begins at 100. Run the simulation to see whether repeated pressure breaks the system.</desc><path d="M35 20H420M35 90H420M35 160H420" class="chart-grid"/><text x="3" y="24" class="chart-label">100</text><text x="9" y="94" class="chart-label">50</text><text x="16" y="164" class="chart-label">0</text><text x="35" y="184" class="chart-label">START</text><text x="375" y="184" class="chart-label">ROUND 10</text><path id="pressure-area" class="pressure-area" d="M35 160L35 20L35 160Z"/><path id="pressure-line" class="pressure-line" d="M35 20"/><circle id="pressure-point" cx="35" cy="20" r="5"/></svg></div>
+              <div class="integrity-readout"><strong id="integrity-value">100<span>%</span></strong><span>SYSTEM INTEGRITY<br><small>illustrative units</small></span></div>
+              <p id="pressure-feedback" class="feedback" role="status">Start with repair off. Then repeat with it on.</p>
+            </div>
+          </div>
+          <div class="experiment-takeaway"><span>WHAT I THINK ↳</span><p>I think hacking can make a system stronger, but I’m assuming somebody fixes what went wrong. Turning repair off makes that assumption pretty obvious. The system keeps taking damage from the same problem.</p></div>
+        </div>
+        <div class="lab-bottom"><span id="experiment-progress">01 / 03 EXPERIMENTS VISITED</span><a href="#reflection">My thoughts after reading ↓</a></div>
+      </div>
+    </section>
+
+    <section id="reflection" class="reflection-section wrap section-space" aria-labelledby="reflection-title">
+      <div class="section-heading"><p class="eyebrow">03 / MY REFLECTION</p><p class="section-kicker">How this connects to Explainable AI.</p></div>
+      <div class="reflection-layout">
+        <aside class="reflection-aside"><div class="diamond-sketch" aria-hidden="true"><svg viewBox="0 0 200 150"><path d="m30 45 35-28h70l35 28-70 88ZM30 45h140M65 17l-10 28 45 88 45-88-10-28M65 17l35 28 35-28M100 45v88" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div><p>“Only under extreme pressure<br>are diamonds forged.”</p><small>HOW I THINK ABOUT<br>TESTING A SYSTEM.</small></aside>
+        <div class="reflection-prose"><h2 id="reflection-title">I still think<br><em>hacking is useful.</em></h2>
+          <p>I still think hacking is good overall. Systems need to be tested, and I like people who are willing to question rules that everyone else accepts. If nobody tries something unexpected, a weakness can sit there for years. I don’t think the answer is to discourage people from looking.</p>
+          <p>The part that complicates that for me is who gets to benefit. Schneier’s discussion of powerful people exploiting systems made me think about how different that is from the lone hacker I tend to imagine. I’m less impressed by someone winning if they can afford a whole team to find loopholes while everyone else has to live with the result.</p>
+          <h3>The connection to Explainable AI</h3>
+          <p>The scoring game helped me connect the book to AIPI 590. I can explain exactly why the player got 100 points: the system counted five submissions. There’s no mystery in the calculation. It’s just counting something that doesn’t tell us much about learning.</p>
+          <p>That seems relevant when we explain an AI model’s output. Knowing which inputs affected a prediction can help us see what the model is doing. We still have to decide whether those inputs make sense for the task. If a model treats the number of submitted notes as evidence of learning, I’d want to try repeated notes and see what happens. An explanation would be useful partly because it tells me where to look for that kind of problem.</p>
+          <p>I kept coming back to the idea that pressure makes diamonds. I still like that comparison, but the repair experiment shows what I’m leaving out when I say it. Pressure only helps this system if it can respond. And if the people who benefit from a loophole don’t want it fixed, I can’t assume that response will happen.</p>
+          <h3>Why I made this in code</h3>
+          <p>I wanted to do more than describe the examples. The games let me try the shortcut, see the result, and change the rule myself. I can get a high score without learning much, or take most of a fund without breaking its rules. Being able to switch between the original rule and the fix makes the problem easier for me to understand.</p>
+          <p class="final-thought">I’m still going to enjoy finding a shortcut. This book made me more interested in <em>who else is using one, and what it costs the rest of us.</em></p>
+        </div>
+      </div>
+      <div class="reader-response"><div><p class="eyebrow">YOUR RESPONSE</p><h3>Where do you draw the line?</h3><p>When does a clever workaround become a harmful exploit?</p></div><div class="response-input"><label for="reader-note">Your margin note <span>(optional · stays in this browser)</span></label><textarea id="reader-note" rows="3" maxlength="2000" placeholder="For me, the line is…"></textarea><div class="note-actions"><span id="save-state" role="status">Saved locally as you type. Never sent anywhere.</span><button id="download-note" class="text-button" type="button">Export field notes ↗</button></div></div></div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><a class="wordmark" href="#">↳ MIND THE LOOPHOLE</a><span>A Hacker’s Mind × AIPI 590</span><a href="#">Back to the beginning ↑</a></footer>
+</body>
+</html>

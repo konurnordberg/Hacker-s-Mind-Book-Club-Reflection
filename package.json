@@ -1,0 +1,16 @@
+{
+  "name": "mind-the-loophole",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A playable book reflection for AIPI 590: Explainable AI",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test",
+    "build": "node scripts/build.mjs"
+  }
+}
